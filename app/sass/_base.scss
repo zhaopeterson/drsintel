@@ -6,7 +6,404 @@ main {display: block}
 
 body {
 	background: $lightsilver;
-	font-family: 'IntelClear_Light';
+	font-family: $textFont;
 	color:$white;
 	font-size: 1rem;
+}
+
+.page-drc {
+	header {
+		position:fixed;
+		top:0;
+		width: 100%;
+		background:$aquablue;
+		z-index:1000;
+	}
+
+	.header-wrapper {
+		max-width:1440px;
+		height:60px;
+		margin: 0 auto;
+		background: url(../images/intel-logo-white.svg) no-repeat center center;
+		background-size: 66px 44px;
+
+		h1 {
+			display: none;
+
+			@media (min-width:$medium) {
+				display: block;
+				line-height:60px;
+				font-size:18px;
+				margin-left:84px;
+			}
+		}
+	}
+
+	.sidemenu {
+		position:absolute;
+		height:60px;
+		width: 64px;
+
+		@media (min-width:$medium) {
+			width: 84px;
+		}
+
+		.line {
+			display: block;
+			width:28px;
+			height:2px;
+			position: absolute;
+			background:$white;
+			left:18px;
+				@media (min-width:$medium) {
+					left:28px;
+				}
+
+			&:nth-child(1) {
+				top:18px;
+			}
+
+			&:nth-child(2) {
+				top:28px;
+			}
+
+			&:nth-child(3) {
+				top:38px;
+			}
+		}
+	}
+
+	// ========== Jumbotron Section ===========
+	.content-wrapper {
+		width: 100%;
+		background: -moz-linear-gradient(left, #020a1b 0%, #001e42 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(left, #020a1b 0%,#001e42 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to right, #020a1b 0%,#001e42 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	}
+	.content {
+		position:relative;
+		max-width: 1440px;
+		margin:0 auto;
+		height: 860px;
+		background: #002553 url(../images/bg-abstract.jpg) no-repeat center center;
+		overflow: hidden;
+	}
+
+	.jumbotron {
+		padding: 60px 0 0 0;
+	}
+
+	.headinggroup {
+		padding: 50px 0 70px;
+		text-align:center;
+
+			@media (min-width: $small) {
+				padding: 70px 0 70px;
+			}
+
+			@media (min-width: $medium) {
+				padding: 224px 0;
+			}
+
+		h1 {
+			font-family: $headingFont;
+			font-size:50px;
+			margin: 0 10px 20px;
+			@media (min-width: $medium) {
+				font-size:100px;
+			}
+		}
+
+		h2 {
+			font-size:15px;
+			width: 60%;
+			line-height: 1.4;
+			margin: 0 auto;
+
+			@media (min-width: $small) {
+				font-size: 18px;
+			}
+			@media (min-width: $medium) {
+				font-size:24px;
+			}
+		}
+	}
+
+	// ==== Promotional Section with three banners
+	.promo {
+		position: absolute;
+		bottom:0;
+		width: 100%;
+		height:540px;
+
+		@media (min-width: $medium) {
+			height:224px;
+
+		}
+	}
+
+	aside {
+		width: 100%;
+		margin-top:12px;
+		@media (min-width: $medium) {
+
+		}
+
+		h2 {
+			font-size: 18px;
+			@media (min-width: $small) {
+				font-size: 24px;
+				margin-bottom: 8px;
+			}
+						@media (min-width: $medium) {
+				text-align: center
+			}
+		}
+
+		#project-list, #popular-list {
+			position:relative;
+			width:100%;
+		}
+
+		&.item-project {
+			height: 156px;
+			@media (min-width: $medium) {
+				position: absolute;
+				height: 224px;
+				width: 30%;
+				top:0;
+				left:0;
+				margin-top:0;
+			}
+		}
+
+		&.item-popular {
+			@media (min-width: $medium) {
+				position: absolute;
+				height: 224px;
+				width: 30%;
+				top:0;
+				right:0;
+				margin-top:0;
+			}
+		}
+		&.item-training {
+			height: 204px;
+			@media (min-width: $medium) {
+				height: 224px;
+				width: 40%;
+				margin: 0 30%;
+				margin-top:0;
+				padding: 0 1px;
+			}
+		}
+
+		.item-inner-wrapper {
+			padding: 15px 20px;
+			width:100%;
+			height: inherit;
+			background:rgba(0,60,113,0.9);
+			@media (min-width: $small) {
+				padding: 25px;
+			}
+		}
+
+		@media (min-width: $xlarge) {
+			&.item-project .item-inner-wrapper {
+				padding: 25px 5% 25px 20%;
+			}
+			&.item-popular .item-inner-wrapper {
+				padding: 25px 20% 25px 5%;
+			}
+		}
+
+		li {
+			width: 100%;
+			font-size: 12px;
+			line-height: 1.8;
+
+			@media (min-width: $small) {
+				font-size: 16px;
+			}
+
+			@media (min-width: $medium) {
+				text-align: center
+			}
+
+			a {
+				position:relative;
+				text-decoration: none;
+				color:$linkblue;
+				white-space: nowrap;
+				overflow: hidden;
+				width:100%;
+				padding-right:5px;
+				text-overflow: ellipsis;
+
+				&:hover {
+					color:#fff;
+					text-decoration: none;
+				}
+				&::after{
+					content: '\003E';
+					position:absolute;
+					top:0;
+					left:100%;
+
+					@media (min-width: $small) {
+						top:-2px;
+					}
+				}
+			}
+
+			@media (min-width: $small) {
+				width: 50%;
+
+				&.mobile-col2-1,&.mobile-col2-2 {
+					position: absolute;
+					right:0;
+				}
+				&.mobile-col2-1 {
+					top:0;
+				}
+				&.mobile-col2-2  {
+					top:30px;
+				}
+			}
+
+			@media (min-width: $medium) {
+				width: 100%;
+
+				&.mobile-col2-1,&.mobile-col2-2 {
+					position: static;
+				}
+
+			}
+		}
+
+	}
+
+	.traininginfo {
+		margin: 10px 0;
+		overflow: hidden;
+		line-height: 1.4;
+	    display: -webkit-box;
+	    -webkit-line-clamp: 3;
+	    -webkit-box-orient: vertical;
+	    text-overflow: ellipsis; 
+	    margin-bottom:1rem;
+
+	    @media (min-width: $medium) {
+			text-align: center
+		}
+	}
+
+	@media (min-width: $medium) {
+		.calltoaction {
+			text-align: center;
+		}
+	}
+
+
+	.calltoaction a {
+		color: $linkblue;
+		position:relative;
+		padding-right:5px;
+		text-decoration: none;
+		margin-top: 24px;
+
+		&:hover {
+			color: $white;
+		}
+
+		&::after{
+			content: '\003E';
+			position:absolute;
+			top: 4px;
+			left:100%;
+		}
+	}
+
+	// ========= Footer ==========
+
+	footer {
+		color: $mediumgrey;
+		width:100%;
+		height:260px;
+		padding: 0 20px 20px 20px;
+		line-height: 1.6;
+
+		@media (min-width: $medium) {
+			height:240px;
+		}
+	}
+	.footer-wrapper {
+		max-width:1440px;
+		margin: 0 auto;
+		@include clearfix
+	}
+
+	.footer-branding {
+		height:86px;
+		background: url(../images/intel-logo-grey.svg) no-repeat 4px 29px;
+		background-size: 66px 44px;
+
+		@media (min-width: $medium) {
+			float: left;
+			width: 284px;
+			height:225px;
+			border-right:solid 1px #dbdbdb;
+			background-position: 180px 86px;
+		}
+	}
+
+	@media (min-width: $medium) {
+		.footer-info {
+			float: left;
+			padding: 46px 0 86px 50px;
+		}
+	}
+
+	.generalinfo {
+		font-size: 14px;
+		margin-bottom: 10px;
+		@include clearfix;
+	
+		@media (min-width: $small) {
+			margin-top:30px;
+			font-size: 17px;
+			li {
+				float:left;
+				margin-right: 30px;
+			}
+		}	
+	}
+
+	.legalinfo {
+		font-size: 12px;
+
+		@media (min-width: $small) {
+			margin-top:30px;
+			li {
+				float:left;
+				padding: 0 14px;
+				line-height:14px;
+				border-right: solid 1px $mediumgrey;
+				&:first-child {
+					padding-left:0;
+				}
+				&:last-child{
+					border:0;
+				}
+			}
+		}	
+	}
+	li a {
+		text-decoration: none;
+		color: $mediumgrey;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 }
