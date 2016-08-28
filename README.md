@@ -23,16 +23,16 @@ $xlarge: 1440px
 text-rendering: optimizeLegibility;
 did not seem to work
 4. This might be an overkill, but fun to know can be done -- split text into two-line for promo h2,
-<pre> 
+<code> 
 <h2>Find information and services to <span>publish and manage digital content.</span></h2>
-and use css generated content to add a “<br>”
-</pre>
-<pre>
+and use css generated content to add a <br>
+</code>
+<code>
 .promo h2 span:before {
     content: ' \00000a';
     white-space: pre;
 }
-</pre>
+</code>
 
 
 ### Layout
@@ -82,5 +82,7 @@ box 3 static
 
 2. The text anchor links in Desktop view is center align and with the right arrow next to it. I think will make localizations more challenging (same copy in German or Russia would be much longer). Without using Javascript it would be almost impossible to append the right arrow to the ellipsise text ...
 we could get around this by generating a span tag next to the anchor tag like this
-"<li><a href="#">Set up a website</a><span>RIGHR ARROW GOES HERE</span></li>"
+<code>
+<li><a href="#">Set up a website</a><span>RIGHR ARROW GOES HERE</span></li>
+</code>
 3. In the mobile version the promo section first box is 156px second is 158px, should be consistent.
