@@ -12,7 +12,6 @@
 ### break-points
 1. There should be more designs for very narrow phone screen, tablet and extremely wide screen. I implemented couple of layouts according to common sense. e.g. For extremeely narrow screen, the anchor text links should be just one column instead of two columns in the psd.
 
-
 ### text and anchor link treatment
 1. Since the design did not specific the hover color, just used white for the promo links (which makes sense from a design perspective)
 2. The footer link color also obtained from Intel.com
@@ -20,8 +19,6 @@
 text-rendering: optimizeLegibility;
 Those only works on chrome,not seeing Intel.com doing it so omit it for now.
 4. Spliting text into two line, the mobile layout in site I build did not split the text exactly lie the mock up.
-
-
 
 ### Layout
 1. In the promo section, used the most conservative approach for the three boxes, no flex-box or multi-columns for fear of breaking down the page.

@@ -28,6 +28,50 @@ body.page-drc {
 			left:100%;
 		}
 	}
+
+
+
+	 nav li {
+			width: 100%;
+			font-size: 12.5px;
+			line-height: 1.8;
+			margin-top: 4px;
+
+			@media (min-width: $small) {
+				font-size: 16px;
+			}
+
+			@media (min-width: $medium) {
+				text-align: center;
+				margin-top: 0;
+			}
+
+			@media (min-width: $small) {
+				width: 50%;
+
+				&.mobile-col2-1,&.mobile-col2-2 {
+					position: absolute;
+					right:0;
+					padding-left:20px;
+				}
+				&.mobile-col2-1 {
+					top:0;
+				}
+				&.mobile-col2-2  {
+					top:30px;
+				}
+			}
+
+			@media (min-width: $medium) {
+				width: 100%;
+
+				&.mobile-col2-1,&.mobile-col2-2 {
+					position: static;
+					padding-left:0;
+				}
+			}
+		}
+
 	nav li a {
 		position:relative;
 		color:$linkblue;
@@ -45,6 +89,7 @@ body.page-drc {
 	.calltoaction a {
 		position:relative;
 		padding-right:5px;
+		// set z-index to make sure the link is always on top of the training text
 		z-index:500;
 
 		&::after{
@@ -94,6 +139,7 @@ body.page-drc {
 			letter-spacing: .028em;
 			font-size:50px;
 			margin: 0 10px 20px;
+
 			@media (min-width: $medium) {
 				font-size:100px;
 			}
@@ -105,12 +151,21 @@ body.page-drc {
 			line-height: 1.4;
 			margin: 0 auto;
 
+			span::before {
+				content: '\00000a';
+    			white-space: pre;
+			}
+
 			@media (min-width: $small) {
 				width: 60%;
 				font-size: 18px;
 			}
 			@media (min-width: $medium) {
 				font-size:24px;
+				span::before {
+					content: '';
+	    			white-space: pre;
+				}
 			}
 		}
 	}
@@ -123,7 +178,8 @@ body.page-drc {
 	    display: -webkit-box;
 	    -webkit-line-clamp: 3;
 	    -webkit-box-orient: vertical;
-	    text-overflow: ellipsis; 
+	    text-overflow: ellipsis;
+	    // To ensure in case the line clamps not working the extra text will not spill over to the call to action button
 	    max-height: 80px;
 
 	    @media (min-width: $small) {
