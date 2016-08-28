@@ -67,4 +67,6 @@ we could get around this by generating a span tag next to the anchor tag like th
 3. In the mobile version the promo section first box is 156px second is 158px, should be consistent.
 
 
-##======== things should to do -- add web accessibilities ... but this is an exercise for responsive design/workflow, do not want to add extra markups ... and kind of running out of time
+## -- added basic web accessibilities 
+1. role
+2. arial-label
