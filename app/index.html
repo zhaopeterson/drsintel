@@ -11,76 +11,73 @@
 </head>
 
 <body class="page-drc">
-<header>
+<header role="banner">
 	<div class="header-wrapper">
-		<div class="sidemenu">
+		<div class="sidemenu" id="hamburger-button">
 			<span class="line"></span>
 			<span class="line"></span>
 			<span class="line"></span>
 		</div>
-		<h1>Digital Resource Center</h1>
+		<h2>Digital Resource Center</h2>
 	</div>
 </header>
-<main class="content-wrapper">
-	<div class="content">
-	<section class="jumbotron">
-		<div class="headinggroup">
-			<h1>The Digital Resource Center</h1>
-			<h2>Find information and services to publish and manage digital content.</h2>
-		</div>
-	</section>
-	<section class="promo">
-		<aside class="item-project">
-			<div class="item-inner-wrapper">
-			<h2>Start a Project</h2>
-			<ul id="project-list">
-				<li><a href="#">Set up a website</a></li>
-				<li><a href="#">Set up a mobile app</a></li>
-				<li><a href="#">Open a social media account</a></li>
-				<li class="mobile-col2-1"><a href="#">Start a community forum</a></li>
-				<li class="mobile-col2-2"><a href="#">Request help with paid media</a></li>
-			</ul>
-		</div>
-		</aside>
-		<aside class="item-popular">
-			<div class="item-inner-wrapper">		
-			<h2>Popular on the DRC</h2>
-			<ul id="popular-list">
-				<li><a href="#">Style guide for Intel.com</a></li>
-				<li><a href="#">How to end of life pages</a></li>
-				<li><a href="#">Setting up a mobile app</a></li>
-				<li class="mobile-col2-1"><a href="#">Publishing content on Intel.com</a></li>
-				<li class="mobile-col2-2"><a href="#">Tracking visitors on your site</a></li>
-			</ul>
-		</div>
-		</aside>
-		<aside class="item-training">
-			<div class="item-inner-wrapper">
-			<h2>New Training Available</h2>
-			<p class="traininginfo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-
-			<p class="calltoaction"><a href="#">Call to Action</a></p>
-		</div>
-		</aside>
-	</section>
-	</div>
-</main>
-<footer>
-	<div class="footer-wrapper">
-		<section class="footer-branding">
-
+<main class="content-wrapper" role="main">
+	<article class="content" role="article">
+		<section class="headinggroup">
+				<h1>The Digital Resource Center</h1>
+				<h2>Find information and services to publish and manage digital content.</h2>
 		</section>
+		<section class="promo">
+			<nav class="item-project" role="navigation">
+				<div class="item-inner-wrapper">
+				<h2>Start a Project</h2>
+				<ul id="project-list">
+					<li><a href="#" aria-label="Link to Set up a website ">Set up a website</a></li>
+					<li><a href="#" aria-label="Link to Set up a mobile app">Set up a mobile app</a></li>
+					<li><a href="#" aria-label="Link to Open a social media account">Open a social media account</a></li>
+					<li class="mobile-col2-1" aria-label="Link to Start a community forum"><a href="#">Start a community forum</a></li>
+					<li class="mobile-col2-2"><a href="#" aria-label="Link to Request help with paid media">Request help with paid media</a></li>
+				</ul>
+			</div>
+			</nav>
+			<nav class="item-popular" role="navigation">
+				<div class="item-inner-wrapper">		
+				<h2>Popular on the DRC</h2>
+				<ul id="popular-list">
+					<li><a href="#" aria-label="Link to Style guide for Intel.com">Style guide for Intel.com</a></li>
+					<li><a href="#" aria-label="Link to How to end of life pages">How to end of life pages</a></li>
+					<li><a href="#" aria-label="Link to Setting up a mobile app">Setting up a mobile app</a></li>
+					<li class="mobile-col2-1"><a href="#" aria-label="Link to Publishing content on Intel.com">Publishing content on Intel.com</a></li>
+					<li class="mobile-col2-2"><a href="#" aria-label="Link to Tracking visitors on your site">Tracking visitors on your site</a></li>
+				</ul>
+			</div>
+			</nav>
+			<nav class="item-training" role="navigation">
+				<div class="item-inner-wrapper">
+				<h2>New Training Available</h2>
+				<p class="traininginfo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+
+				<p class="calltoaction"><a href="#" aria-label="Link to Call to Action">Call to Action</a></p>
+			</div>
+			</nav>
+		</section>
+	</article>
+</main>
+<footer role="contentinfo">
+	<div class="footer-wrapper">
+		<div class="footer-branding">
+		</div>
 		<section class="footer-info">
 			<ul class="generalinfo">
-				<li><a href="#">About the Digital Resource Center</a></li>
-				<li><a href="#">Contact Us</a></li>
-				<li><a href="">Site Map</a></li>
+				<li><a href="#" aria-label="Link to About the Digital Resource Center">About the Digital Resource Center</a></li>
+				<li><a href="#" aria-label="Link to Contact Us">Contact Us</a></li>
+				<li><a href="#" aria-label="Link to Site Map">Site Map</a></li>
 			</ul>
 			<ul class="legalinfo">
-				<li><a href="$">&copy Intel Corporation</a></li>
-				<li><a href="#">Terms of Use</a></li>
-				<li><a href="#">Trademarks</a></li>
-				<li><a href="#">Privacy</a></li>
+				<li><a href="#" aria-label="Link to Intel Corporation">&copy Intel Corporation</a></li>
+				<li><a href="#" aria-label="Link to Terms of Use">Terms of Use</a></li>
+				<li><a href="#" aria-label="Link to Trademarks">Trademarks</a></li>
+				<li><a href="#" aria-label="Link to Privacy Policy">Privacy</a></li>
 			</ul>
 		</section>
 	</div>

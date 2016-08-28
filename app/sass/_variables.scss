@@ -1,21 +1,20 @@
 // _variables.scss
 // =================
-@import "http://fonts.googleapis.com/css?family=Patua+One|Inika";
  
 $aquablue    :	#0071c5;
 $linkblue	: #00adee;
 $lightsilver :	#e7e7e7;
 $mediumgrey	 : 	#57585b;
+$lightgrey	: #959595;
 $white: #fff;
 
 $headingFont : 'IntelClearPro_Bold';
 $textFont : 'IntelClear_Light';
 
 
-// The following breaking points are mirroring Intel.com break points
+// The following breaking points are mainly restricted by the two psds supplied
 
-$xsmall: 480px;
-$small: 568px;
+$small: 565px;
 $medium: 992px;
 $large: 1200px;
 $xlarge: 1440px

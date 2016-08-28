@@ -1,17 +1,15 @@
-* {
-	box-sizing: border-box;
-}
-
-main {display: block}
-
-body {
+body.page-drc {
 	background: $lightsilver;
-	font-family: $textFont;
+	font-family: $textFont, sans-serif;
 	color:$white;
 	font-size: 1rem;
 }
 
 .page-drc {
+	* {
+		@include box-sizing;
+	}
+
 	header {
 		position:fixed;
 		top:0;
@@ -24,10 +22,10 @@ body {
 		max-width:1440px;
 		height:60px;
 		margin: 0 auto;
-		background: url(../images/intel-logo-white.svg) no-repeat center center;
+		background: url(../images/Intel-logo-white.svg) no-repeat center center;
 		background-size: 66px 44px;
 
-		h1 {
+		h2 {
 			display: none;
 
 			@media (min-width:$medium) {
@@ -35,6 +33,7 @@ body {
 				line-height:60px;
 				font-size:18px;
 				margin-left:84px;
+				letter-spacing: 0.028em;
 			}
 		}
 	}
@@ -85,28 +84,29 @@ body {
 		max-width: 1440px;
 		margin:0 auto;
 		height: 860px;
-		background: #002553 url(../images/bg-abstract.jpg) no-repeat center center;
+		background: #002553 url(../images/bg-abstract-mobile.jpg) no-repeat center center;
 		overflow: hidden;
+		@media (min-width: $small){
+			background: #002553 url(../images/bg-abstract.jpg) no-repeat center center;
+		}
 	}
 
-	.jumbotron {
-		padding: 60px 0 0 0;
-	}
 
 	.headinggroup {
-		padding: 50px 0 70px;
+		padding: 110px 0 70px;
 		text-align:center;
 
 			@media (min-width: $small) {
-				padding: 70px 0 70px;
+				padding: 130px 0 70px;
 			}
 
 			@media (min-width: $medium) {
-				padding: 224px 0;
+				padding: 275px 0 225px;
 			}
 
 		h1 {
 			font-family: $headingFont;
+			letter-spacing: .029em;
 			font-size:50px;
 			margin: 0 10px 20px;
 			@media (min-width: $medium) {
@@ -138,16 +138,12 @@ body {
 
 		@media (min-width: $medium) {
 			height:224px;
-
 		}
 	}
 
-	aside {
+	nav {
 		width: 100%;
-		margin-top:12px;
-		@media (min-width: $medium) {
-
-		}
+		margin-bottom:12px;
 
 		h2 {
 			font-size: 18px;
@@ -155,7 +151,7 @@ body {
 				font-size: 24px;
 				margin-bottom: 8px;
 			}
-						@media (min-width: $medium) {
+			@media (min-width: $medium) {
 				text-align: center
 			}
 		}
@@ -166,33 +162,43 @@ body {
 		}
 
 		&.item-project {
-			height: 156px;
+			height: 176px;
+			@media (min-width: $small) {
+				height: 156px;
+			}
 			@media (min-width: $medium) {
 				position: absolute;
-				height: 224px;
-				width: 30%;
 				top:0;
 				left:0;
+				height: 224px;
+				width: 32%;
 				margin-top:0;
 			}
 		}
 
 		&.item-popular {
+			height: 176px;
+			@media (min-width: $small) {
+				height: 156px;
+			}
 			@media (min-width: $medium) {
 				position: absolute;
-				height: 224px;
-				width: 30%;
 				top:0;
 				right:0;
+				height: 224px;
+				width: 32%;
 				margin-top:0;
 			}
 		}
 		&.item-training {
-			height: 204px;
+			height: 164px;
+			@media (min-width: $small) {
+				height: 204px;
+			}
 			@media (min-width: $medium) {
 				height: 224px;
-				width: 40%;
-				margin: 0 30%;
+				width: 36%;
+				margin: 0 32%;
 				margin-top:0;
 				padding: 0 1px;
 			}
@@ -204,30 +210,31 @@ body {
 			height: inherit;
 			background:rgba(0,60,113,0.9);
 			@media (min-width: $small) {
-				padding: 25px;
+				padding: 22px 24px;
 			}
 		}
 
 		@media (min-width: $xlarge) {
 			&.item-project .item-inner-wrapper {
-				padding: 25px 5% 25px 20%;
+				padding: 25px 2% 25px 30%;
 			}
 			&.item-popular .item-inner-wrapper {
-				padding: 25px 20% 25px 5%;
+				padding: 25px 30% 25px 2%;
 			}
 		}
 
 		li {
 			width: 100%;
-			font-size: 12px;
+			font-size: 13px;
 			line-height: 1.8;
+			margin-top: 5px;
 
 			@media (min-width: $small) {
 				font-size: 16px;
 			}
 
 			@media (min-width: $medium) {
-				text-align: center
+				text-align: center;
 			}
 
 			a {
@@ -237,8 +244,9 @@ body {
 				white-space: nowrap;
 				overflow: hidden;
 				width:100%;
-				padding-right:5px;
 				text-overflow: ellipsis;
+				padding: 4px 5px 4px 0;
+
 
 				&:hover {
 					color:#fff;
@@ -247,12 +255,8 @@ body {
 				&::after{
 					content: '\003E';
 					position:absolute;
-					top:0;
+					top:2px;
 					left:100%;
-
-					@media (min-width: $small) {
-						top:-2px;
-					}
 				}
 			}
 
@@ -277,24 +281,28 @@ body {
 				&.mobile-col2-1,&.mobile-col2-2 {
 					position: static;
 				}
-
 			}
 		}
 
 	}
 
 	.traininginfo {
-		margin: 10px 0;
+		margin: 15px 0 0;
 		overflow: hidden;
-		line-height: 1.4;
+		line-height: 1.6;
+		font-size: 13px;
 	    display: -webkit-box;
 	    -webkit-line-clamp: 3;
 	    -webkit-box-orient: vertical;
 	    text-overflow: ellipsis; 
-	    margin-bottom:1rem;
+	    margin-bottom:24px;
+
+	    @media (min-width: $small) {
+			font-size: 16px;
+		}
 
 	    @media (min-width: $medium) {
-			text-align: center
+			text-align: center;
 		}
 	}
 
@@ -304,13 +312,11 @@ body {
 		}
 	}
 
-
 	.calltoaction a {
 		color: $linkblue;
 		position:relative;
 		padding-right:5px;
 		text-decoration: none;
-		margin-top: 24px;
 
 		&:hover {
 			color: $white;
@@ -345,9 +351,11 @@ body {
 
 	.footer-branding {
 		height:86px;
-		background: url(../images/intel-logo-grey.svg) no-repeat 4px 29px;
+		background: url(../images/Intel-logo-grey.svg) no-repeat 4px 29px;
 		background-size: 66px 44px;
-
+		@media (min-width: $small) {
+			margin-bottom: 30px;
+		}
 		@media (min-width: $medium) {
 			float: left;
 			width: 284px;
@@ -360,17 +368,16 @@ body {
 	@media (min-width: $medium) {
 		.footer-info {
 			float: left;
-			padding: 46px 0 86px 50px;
+			padding: 90px 0 40px 56px;
+
 		}
 	}
 
 	.generalinfo {
 		font-size: 14px;
-		margin-bottom: 10px;
 		@include clearfix;
 	
 		@media (min-width: $small) {
-			margin-top:30px;
 			font-size: 17px;
 			li {
 				float:left;
@@ -380,13 +387,13 @@ body {
 	}
 
 	.legalinfo {
-		font-size: 12px;
-
+		font-size: 13px;
 		@media (min-width: $small) {
-			margin-top:30px;
+			margin-top:60px;
 			li {
 				float:left;
 				padding: 0 14px;
+				// make sure the border do not exceeds the height of the characters
 				line-height:14px;
 				border-right: solid 1px $mediumgrey;
 				&:first-child {
@@ -403,7 +410,7 @@ body {
 		color: $mediumgrey;
 
 		&:hover {
-			text-decoration: underline;
+			color: $lightgrey;
 		}
 	}
 }
