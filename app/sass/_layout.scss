@@ -1,0 +1,295 @@
+.page-drc {
+	header {
+		position:fixed;
+		top:0;
+		width: 100%;
+		background:$aquablue;
+		z-index:1000;
+	}
+
+	.header-wrapper {
+		max-width:1440px;
+		height:60px;
+		margin: 0 auto;
+		background: url(../images/Intel-logo-white.svg) no-repeat center center;
+		background-size: 66px 44px;
+	}
+
+	.sidemenu {
+		position:absolute;
+		height:60px;
+		width: 64px;
+
+		@media (min-width:$medium) {
+			width: 84px;
+		}
+
+		.line {
+			display: block;
+			width:28px;
+			height:2px;
+			position: absolute;
+			background:$white;
+			left:18px;
+				@media (min-width:$medium) {
+					left:28px;
+				}
+
+			&:nth-child(1) {
+				top:18px;
+			}
+
+			&:nth-child(2) {
+				top:28px;
+			}
+
+			&:nth-child(3) {
+				top:38px;
+			}
+		}
+	}
+
+	// ========== Jumbotron Section ===========
+	.content-wrapper {
+		width: 100%;
+		background: -moz-linear-gradient(left, #020a1b 0%, #001e42 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(left, #020a1b 0%,#001e42 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to right, #020a1b 0%,#001e42 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	}
+	.content {
+		position:relative;
+		max-width: 1440px;
+		margin:0 auto;
+		height: 860px;
+		background: #002553 url(../images/bg-abstract-mobile.jpg) no-repeat center center;
+		overflow: hidden;
+		@media (min-width: $small){
+			background: #002553 url(../images/bg-abstract.jpg) no-repeat center center;
+		}
+	}
+
+
+	.headinggroup {
+		padding: 110px 0 70px;
+		text-align:center;
+
+		@media (min-width: $small) {
+			padding: 130px 0 70px;
+		}
+
+		@media (min-width: $medium) {
+			padding: 275px 0 225px;
+		}
+	}
+
+	// ==== Promotional Section with three banners
+	.promo {
+		position: absolute;
+		bottom:0;
+		width: 100%;
+		height:540px;
+
+		@media (min-width: $medium) {
+			height:224px;
+		}
+	}
+
+	nav {
+		width: 100%;
+		margin-bottom:12px;
+
+		#project-list, #popular-list {
+			position:relative;
+			width:100%;
+		}
+
+		&.item-project {
+			height: 176px;
+			@media (min-width: $small) {
+				height: 156px;
+			}
+			@media (min-width: $medium) {
+				position: absolute;
+				top:0;
+				left:0;
+				height: 224px;
+				width: 32%;
+				margin-top:0;
+			}
+		}
+
+		&.item-popular {
+			height: 176px;
+			@media (min-width: $small) {
+				height: 156px;
+			}
+			@media (min-width: $medium) {
+				position: absolute;
+				top:0;
+				right:0;
+				height: 224px;
+				width: 32%;
+				margin-top:0;
+			}
+		}
+		&.item-training {
+			height: 164px;
+			@media (min-width: $small) {
+				height: 204px;
+			}
+			@media (min-width: $medium) {
+				height: 224px;
+				width: 36%;
+				margin: 0 32%;
+				margin-top:0;
+				padding: 0 1px;
+			}
+		}
+
+		.item-inner-wrapper {
+			padding: 15px 20px;
+			width:100%;
+			height: inherit;
+			background:rgba(0,60,113,0.9);
+			@media (min-width: $small) {
+				padding: 22px 24px;
+			}
+		}
+
+		@media (min-width: $xlarge) {
+			&.item-project .item-inner-wrapper {
+				padding: 25px 2% 25px 30%;
+			}
+			&.item-popular .item-inner-wrapper {
+				padding: 25px 30% 25px 2%;
+			}
+		}
+
+		li {
+			width: 100%;
+			font-size: 12.5px;
+			line-height: 1.8;
+			margin-top: 5px;
+
+			@media (min-width: $small) {
+				font-size: 16px;
+			}
+
+			@media (min-width: $medium) {
+				text-align: center;
+				margin-top: 0;
+			}
+
+			@media (min-width: $small) {
+				width: 50%;
+
+				&.mobile-col2-1,&.mobile-col2-2 {
+					position: absolute;
+					right:0;
+				}
+				&.mobile-col2-1 {
+					top:0;
+				}
+				&.mobile-col2-2  {
+					top:30px;
+				}
+			}
+
+			@media (min-width: $medium) {
+				width: 100%;
+
+				&.mobile-col2-1,&.mobile-col2-2 {
+					position: static;
+				}
+			}
+		}
+
+	}
+
+
+	@media (min-width: $medium) {
+		.calltoaction {
+			text-align: center;
+		}
+	}
+
+
+	// ========= Footer ==========
+
+	footer {
+		font-family: $footerFont;
+		color: $mediumgrey;
+		width:100%;
+		height:260px;
+		padding: 0 20px 20px 20px;
+		line-height: 1.6;
+
+		@media (min-width: $medium) {
+			height:240px;
+		}
+	}
+
+	.footer-wrapper {
+		max-width:1440px;
+		margin: 0 auto;
+		@include clearfix
+	}
+
+	.footer-branding {
+		height:86px;
+		background: url(../images/Intel-logo-grey.svg) no-repeat 4px 29px;
+		background-size: 66px 44px;
+
+		@media (min-width: $small) {
+			margin-bottom: 30px;
+		}
+		@media (min-width: $medium) {
+			float: left;
+			width: 284px;
+			height:225px;
+			border-right:solid 1px $extralightgrey;
+			background-position: 180px 86px;
+		}
+	}
+
+	@media (min-width: $medium) {
+		.footer-info {
+			float: left;
+			padding: 90px 0 40px 56px;
+		}
+	}
+
+	.generalinfo {
+		font-size: 14px;
+		@include clearfix;
+		margin-bottom: 20px;
+	
+		@media (min-width: $small) {
+			font-size: 17px;
+			li {
+				float:left;
+				margin-right: 30px;
+			}
+		}	
+	}
+
+	.legalinfo {
+		font-size: 12px;
+		@media (min-width: $small) {
+			margin-top:60px;
+			li {
+				float:left;
+				padding: 0 14px;
+				// make sure the border do not exceeds the height of the characters
+				line-height:14px;
+				border-right: solid 1px $mediumgrey;
+				&:first-child {
+					padding-left:0;
+				}
+				&:last-child{
+					border:0;
+				}
+			}
+		}	
+	}
+}

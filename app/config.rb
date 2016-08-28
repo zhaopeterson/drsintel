@@ -1,0 +1,9 @@
+preferred_syntax = :sass
+http_path = 'app/'
+css_dir = 'css'
+sass_dir = 'sass'
+images_dir = 'images'
+fonts_dir = 'fonts'
+javascripts_dir = 'js'
+relative_assets = true
+line_comments = true

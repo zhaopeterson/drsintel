@@ -1,3 +1,12 @@
-@include font-face('IntelClear_Light', font-files('../fonts/IntelClear_Lt.ttf'));
-
-@include font-face('IntelClearPro_Bold', font-files('../fonts/IntelClearPro_Bd.ttf'));
+@font-face {
+  font-family: "IntelClear_Light";
+  src: url('../fonts/IntelClear_Lt.ttf') format('truetype');
+}
+@font-face {
+  font-family: "IntelClear_Regular";
+  src: url('../fonts/IntelClear_Rg.ttf') format('truetype');
+}
+@font-face {
+  font-family: "IntelClearPro_Bold";
+  src: url('../fonts/IntelClearPro_Bd.ttf') format('truetype');
+}

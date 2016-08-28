@@ -13,14 +13,15 @@ var env,
 	outputDir;
 
 // Manually setting environment as has trouble to set process.env.NODE_ENV 
-env = 'production',
-sassFiles = ['app/sass/drcstyle.scss'];
+// env = 'production',
+env = 'development',
+sassFiles = ['./app/sass/drcstyle.scss'];
 
-if (env ==='development') {
-	outputDir = 'app/';
+if (env === 'development') {
+	outputDir = './app/';
 	sassStyle = "expanded"
 } else {
-	outputDir = 'dist/';
+	outputDir = './dist/';
 	sassStyle = "compressed"
 }
 
@@ -31,9 +32,10 @@ gulp.task('log', function(){
 gulp.task('compass', function(){
 	gulp.src(sassFiles)
 	.pipe(compass({
+		config_file: './app/config.rb',
 		css: outputDir + 'css',
-		sass: 'app/sass',
-		images: 'app/images',
+		sass: './app/sass',
+		images: './app/images',
 		style: sassStyle
 	}))
 	.on('error', gutil.log)
@@ -42,14 +44,14 @@ gulp.task('compass', function(){
 });
 
 gulp.task('html', function() {
-  gulp.src('app/*.html')
+  gulp.src('./app/*.html')
     .pipe(gulpif(env === 'production', minifyHTML()))
     .pipe(gulpif(env === 'production', gulp.dest(outputDir)))
     .pipe(connect.reload())
 });
 
 gulp.task('images', function() {
-  gulp.src('app/images/**/*.*')
+  gulp.src('./app/images/**/*.*')
     .pipe(gulpif(env === 'production', imagemin({
       progressive: true,
       svgoPlugins: [{ removeViewBox: true }],
@@ -59,15 +61,13 @@ gulp.task('images', function() {
     .pipe(connect.reload())
 });
 
-
-
 gulp.task('watch', function(){
-	gulp.watch('app/sass/*.scss', ['compass']);
-	gulp.watch('app/*.html', ['html']);
+	gulp.watch('./app/sass/*.scss', ['compass']);
+	gulp.watch('./app/*.html', ['html']);
 });
 gulp.task('connect', function(){
 	connect.server({
-		root: 'app/',
+		root: './app/',
 		livereload:true
 	})
 })

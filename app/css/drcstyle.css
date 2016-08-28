@@ -56,11 +56,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 @font-face {
   font-family: "IntelClear_Light";
-  src: url('../fonts/../fonts/IntelClear_Lt.ttf') format('truetype');
+  src: url("../fonts/IntelClear_Lt.ttf") format("truetype");
+}
+@font-face {
+  font-family: "IntelClear_Regular";
+  src: url("../fonts/IntelClear_Rg.ttf") format("truetype");
 }
 @font-face {
   font-family: "IntelClearPro_Bold";
-  src: url('../fonts/../fonts/IntelClearPro_Bd.ttf') format('truetype');
+  src: url("../fonts/IntelClearPro_Bd.ttf") format("truetype");
 }
 body.page-drc {
   background: #e7e7e7;
@@ -74,6 +78,124 @@ body.page-drc {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+.page-drc a {
+  text-decoration: none;
+}
+.page-drc .promo a {
+  color: #00adee;
+}
+.page-drc .promo a:hover {
+  color: #fff;
+}
+.page-drc .promo a::after {
+  content: '\003E';
+  position: absolute;
+  left: 100%;
+}
+.page-drc nav li a {
+  position: relative;
+  color: #00adee;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  text-overflow: ellipsis;
+  padding: 4px 5px 4px 0;
+}
+.page-drc nav li a::after {
+  top: 2px;
+}
+.page-drc .calltoaction a {
+  position: relative;
+  padding-right: 5px;
+  z-index: 500;
+}
+.page-drc .calltoaction a::after {
+  top: 4px;
+}
+.page-drc footer li a {
+  font-family: "IntelClear_Regular";
+  color: #57585b;
+}
+.page-drc footer li a:hover {
+  color: #959595;
+}
+.page-drc .header-wrapper h2 {
+  display: none;
+}
+@media (min-width: 992px) {
+  .page-drc .header-wrapper h2 {
+    display: block;
+    line-height: 60px;
+    font-size: 18px;
+    margin-left: 84px;
+    letter-spacing: 0.028em;
+  }
+}
+.page-drc nav h2 {
+  font-size: 18px;
+  white-space: nowrap;
+}
+@media (min-width: 565px) {
+  .page-drc nav h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+}
+@media (min-width: 992px) {
+  .page-drc nav h2 {
+    text-align: center;
+  }
+}
+.page-drc .headinggroup h1 {
+  font-family: "IntelClearPro_Bold";
+  letter-spacing: .028em;
+  font-size: 50px;
+  margin: 0 10px 20px;
+}
+@media (min-width: 992px) {
+  .page-drc .headinggroup h1 {
+    font-size: 100px;
+  }
+}
+.page-drc .headinggroup h2 {
+  font-size: 15px;
+  width: 92%;
+  line-height: 1.4;
+  margin: 0 auto;
+}
+@media (min-width: 565px) {
+  .page-drc .headinggroup h2 {
+    width: 60%;
+    font-size: 18px;
+  }
+}
+@media (min-width: 992px) {
+  .page-drc .headinggroup h2 {
+    font-size: 24px;
+  }
+}
+.page-drc .traininginfo {
+  margin: 15px 0 20px;
+  overflow: hidden;
+  line-height: 1.6;
+  font-size: 13px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  max-height: 80px;
+}
+@media (min-width: 565px) {
+  .page-drc .traininginfo {
+    font-size: 16px;
+  }
+}
+@media (min-width: 992px) {
+  .page-drc .traininginfo {
+    text-align: center;
+  }
+}
+
 .page-drc header {
   position: fixed;
   top: 0;
@@ -87,18 +209,6 @@ body.page-drc {
   margin: 0 auto;
   background: url(../images/Intel-logo-white.svg) no-repeat center center;
   background-size: 66px 44px;
-}
-.page-drc .header-wrapper h2 {
-  display: none;
-}
-@media (min-width: 992px) {
-  .page-drc .header-wrapper h2 {
-    display: block;
-    line-height: 60px;
-    font-size: 18px;
-    margin-left: 84px;
-    letter-spacing: 0.028em;
-  }
 }
 .page-drc .sidemenu {
   position: absolute;
@@ -168,33 +278,6 @@ body.page-drc {
     padding: 275px 0 225px;
   }
 }
-.page-drc .headinggroup h1 {
-  font-family: "IntelClearPro_Bold";
-  letter-spacing: .029em;
-  font-size: 50px;
-  margin: 0 10px 20px;
-}
-@media (min-width: 992px) {
-  .page-drc .headinggroup h1 {
-    font-size: 100px;
-  }
-}
-.page-drc .headinggroup h2 {
-  font-size: 15px;
-  width: 60%;
-  line-height: 1.4;
-  margin: 0 auto;
-}
-@media (min-width: 565px) {
-  .page-drc .headinggroup h2 {
-    font-size: 18px;
-  }
-}
-@media (min-width: 992px) {
-  .page-drc .headinggroup h2 {
-    font-size: 24px;
-  }
-}
 .page-drc .promo {
   position: absolute;
   bottom: 0;
@@ -209,20 +292,6 @@ body.page-drc {
 .page-drc nav {
   width: 100%;
   margin-bottom: 12px;
-}
-.page-drc nav h2 {
-  font-size: 18px;
-}
-@media (min-width: 565px) {
-  .page-drc nav h2 {
-    font-size: 24px;
-    margin-bottom: 8px;
-  }
-}
-@media (min-width: 992px) {
-  .page-drc nav h2 {
-    text-align: center;
-  }
 }
 .page-drc nav #project-list, .page-drc nav #popular-list {
   position: relative;
@@ -302,7 +371,7 @@ body.page-drc {
 }
 .page-drc nav li {
   width: 100%;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 1.8;
   margin-top: 5px;
 }
@@ -316,26 +385,6 @@ body.page-drc {
     text-align: center;
     margin-top: 0;
   }
-}
-.page-drc nav li a {
-  position: relative;
-  text-decoration: none;
-  color: #00adee;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 100%;
-  text-overflow: ellipsis;
-  padding: 4px 5px 4px 0;
-}
-.page-drc nav li a:hover {
-  color: #fff;
-  text-decoration: none;
-}
-.page-drc nav li a::after {
-  content: '\003E';
-  position: absolute;
-  top: 2px;
-  left: 100%;
 }
 @media (min-width: 565px) {
   .page-drc nav li {
@@ -360,48 +409,13 @@ body.page-drc {
     position: static;
   }
 }
-.page-drc .traininginfo {
-  margin: 15px 0 0;
-  overflow: hidden;
-  line-height: 1.6;
-  font-size: 13px;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  text-overflow: ellipsis;
-  margin-bottom: 24px;
-}
-@media (min-width: 565px) {
-  .page-drc .traininginfo {
-    font-size: 16px;
-  }
-}
-@media (min-width: 992px) {
-  .page-drc .traininginfo {
-    text-align: center;
-  }
-}
 @media (min-width: 992px) {
   .page-drc .calltoaction {
     text-align: center;
   }
 }
-.page-drc .calltoaction a {
-  color: #00adee;
-  position: relative;
-  padding-right: 5px;
-  text-decoration: none;
-}
-.page-drc .calltoaction a:hover {
-  color: #fff;
-}
-.page-drc .calltoaction a::after {
-  content: '\003E';
-  position: absolute;
-  top: 4px;
-  left: 100%;
-}
 .page-drc footer {
+  font-family: "IntelClear_Regular";
   color: #57585b;
   width: 100%;
   height: 260px;
@@ -449,6 +463,7 @@ body.page-drc {
 }
 .page-drc .generalinfo {
   font-size: 14px;
+  margin-bottom: 20px;
 }
 .page-drc .generalinfo:after {
   content: "";
@@ -465,7 +480,7 @@ body.page-drc {
   }
 }
 .page-drc .legalinfo {
-  font-size: 13px;
+  font-size: 12px;
 }
 @media (min-width: 565px) {
   .page-drc .legalinfo {
@@ -483,11 +498,4 @@ body.page-drc {
   .page-drc .legalinfo li:last-child {
     border: 0;
   }
-}
-.page-drc li a {
-  text-decoration: none;
-  color: #57585b;
-}
-.page-drc li a:hover {
-  color: #959595;
 }
