@@ -235,6 +235,7 @@ body.page-drc {
 
 			@media (min-width: $medium) {
 				text-align: center;
+				margin-top: 0;
 			}
 
 			a {
@@ -246,7 +247,6 @@ body.page-drc {
 				width:100%;
 				text-overflow: ellipsis;
 				padding: 4px 5px 4px 0;
-
 
 				&:hover {
 					color:#fff;

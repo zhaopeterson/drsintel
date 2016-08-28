@@ -1,33 +1,65 @@
 var gulp  =  require('gulp'),
 	gutil = require('gulp-util'),
 	compass = require('gulp-compass'),
-	connect = require('gulp-connect');
+	connect = require('gulp-connect'),
+	gulpif = require('gulp-if'),
+	minifyHTML = require('gulp-minify-html'),
+	imagemin = require('gulp-imagemin'),
+	pngcrush = require('imagemin-pngcrush');
 
+var env,
+	sassFiles,
+	sassStyle,
+	outputDir;
 
-var sassFiles = ['app/sass/drcstyle.scss']
+// Manually setting environment as has trouble to set process.env.NODE_ENV 
+env = 'production',
+sassFiles = ['app/sass/drcstyle.scss'];
+
+if (env ==='development') {
+	outputDir = 'app/';
+	sassStyle = "expanded"
+} else {
+	outputDir = 'dist/';
+	sassStyle = "compressed"
+}
 
 gulp.task('log', function(){
-	gutil.log('workflow is good')
+	gutil.log('initially setting up the gulpfile ...',env, "env", " outputDir+'css' is", outputDir+'css', "sassStyle is: ", sassStyle)
 })
 
 gulp.task('compass', function(){
 	gulp.src(sassFiles)
 	.pipe(compass({
+		css: outputDir + 'css',
 		sass: 'app/sass',
 		images: 'app/images',
-		style: 'expanded'
+		style: sassStyle
 	}))
 	.on('error', gutil.log)
-	.pipe(gulp.dest('app/css'))
+	.pipe(gulp.dest(outputDir+'css'))
 	.pipe(connect.reload())
 });
 
 gulp.task('html', function() {
   gulp.src('app/*.html')
-    // .pipe(gulpif(env === 'production', minifyHTML()))
-    // .pipe(gulpif(env === 'production', gulp.dest(outputDir)))
+    .pipe(gulpif(env === 'production', minifyHTML()))
+    .pipe(gulpif(env === 'production', gulp.dest(outputDir)))
     .pipe(connect.reload())
 });
+
+gulp.task('images', function() {
+  gulp.src('app/images/**/*.*')
+    .pipe(gulpif(env === 'production', imagemin({
+      progressive: true,
+      svgoPlugins: [{ removeViewBox: true }],
+      use: [pngcrush()]
+    })))
+    .pipe(gulpif(env === 'production', gulp.dest(outputDir + 'images')))
+    .pipe(connect.reload())
+});
+
+
 
 gulp.task('watch', function(){
 	gulp.watch('app/sass/*.scss', ['compass']);
@@ -40,7 +72,4 @@ gulp.task('connect', function(){
 	})
 })
 
-
-
-
-gulp.task('default', ['compass', 'connect','watch'])
+gulp.task('default', ['compass','images','html','log','connect','watch'])
