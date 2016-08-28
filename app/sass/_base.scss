@@ -162,6 +162,7 @@ body.page-drc {
 			}
 			@media (min-width: $medium) {
 				font-size:24px;
+				width: 80%;
 				span::before {
 					content: '';
 	    			white-space: pre;
