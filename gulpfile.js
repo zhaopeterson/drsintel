@@ -14,7 +14,7 @@ var env,
 
 // Manually setting environment as has trouble to set process.env.NODE_ENV 
 env = 'production',
-//env = 'development',
+// env = 'development',
 sassFiles = ['./app/sass/drcstyle.scss'];
 
 if (env === 'development') {

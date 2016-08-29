@@ -70,21 +70,21 @@ body.page-drc {
 					padding-left:0;
 				}
 			}
-		}
 
-	nav li a {
-		position:relative;
-		color:$linkblue;
-		white-space: nowrap;
-		overflow: hidden;
-		width:100%;
-		text-overflow: ellipsis;
-		padding: 4px 5px 4px 0;
+			a {
+				position:relative;
+				color:$linkblue;
+				white-space: nowrap;
+				overflow: hidden;
+				width:100%;
+				text-overflow: ellipsis;
+				padding: 4px 5px 4px 0;
 
-		&::after{
-			top:2px;
+				&::after{
+					top:2px;
+				}
+			}
 		}
-	}
 
 	.calltoaction a {
 		position:relative;
